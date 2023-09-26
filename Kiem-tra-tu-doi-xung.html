@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kiểm tra từ đối xứng</title>
+</head>
+<body>
+<script>
+    let word = prompt('Nhập vào một từ bất kì: ');
+    alert(word + isPalindrome(word));
+
+    function isPalindrome(str) {
+        let arr = Array.from(str);
+        for (let i in arr) {
+            let j = arr.length - 1;
+            if (arr[i] != arr[j]) {
+                return " không phải là từ đối xứng";
+            }
+            j--;
+            return " là từ đối xứng";
+        }
+    }
+</script>
+</body>
+</html>

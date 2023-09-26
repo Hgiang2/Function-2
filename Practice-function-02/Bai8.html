@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Luyện tập tạo và sử dụng hàm 02 (bài 8)</title>
+</head>
+<body>
+<script>
+    function arrRandom(arrRandom) {
+        for (let i=0; i < 5; i++) {
+            arrRandom[i]=Math.floor(Math.random() * 100);
+            arrRandom.push(arr[i]);
+        }
+        return arrRandom;
+    }
+    function arrReverse(arrRandom) {
+        return arrRandom.reverse();
+    }
+
+    let arr = [];
+    let arrRand = arrRandom(arr);
+    alert("Mảng random vừa được tạo là " + arrRand.join(", "));
+    alert("Mảng random được đảo ngược là " + arrReverse(arrRand).join(", "));
+</script>
+</body>
+</html>

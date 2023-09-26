@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Luyện tập tạo và sử dụng hàm 02 (bài 9)</title>
+</head>
+<body>
+<script>
+  let str = prompt('Nhập mảng kí tự bất kì: ');
+  let char = prompt('Nhập kí tự cần tìm: ');
+
+  alert('Số lần xuất hiện của kí tự cần tìm là ' + charSearch(str, char));
+
+  function charSearch(string, character) {
+      let arr = Array.from(string);
+      let count=0;
+      let result = "";
+      for (let i=0; i < arr.length; i++) {
+          if (arr[i]==character) {
+              count++;
+          }
+          result = count;
+      }
+      if (count == 0) {
+          result = -1;
+      }
+      return result;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Luyện tập tạo và sử dụng hàm 01 (bài 5)</title>
+</head>
+<body>
+<script>
+    let star = prompt('Nhập tên ngôi sao: ');
+
+    let star1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let star2 = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+
+    function arrSearch(arr1, arr2) {
+        let result = "";
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] === star) {
+                result = arr2[i];
+                break;
+            } else {
+                result = "Không tìm thấy chòm sao tương ứng";
+            }
+        }
+        return result;
+    }
+    alert(arrSearch(star1, star2));
+</script>
+</body>
+</html>

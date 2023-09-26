@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Luyện tập tạo và sử dụng hàm 02 (bài 6)</title>
+</head>
+<body>
+<script>
+    let n = +prompt('Nhập vào 1 ký tự bất kì: ');
+    alert('Số vừa nhập ' + isPositive(n));
+    function isPositive(num) {
+        let result=  "";
+        if (num < 0) {
+            result = "không phải là số nguyên dương";
+        } else {
+            result = "là số nguyên dương";
+        }
+        return result;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ứng dụng quản lý sản phẩm sử dụng hàm</title>
+  <style>
+    * {
+        box-sizing: border-box;
+        font-family: Roboto, sans-serif;
+        font-size: 18px;
+    }
+    td {
+        padding: 10px;
+    }
+    input:disabled {
+        border: none;
+        color:black;
+    }
+  </style>
+</head>
+<body onload="showProduct(productList)">
+<div>
+  <h2>Add New Product</h2>
+  <div>
+
+      <input type="text" id="new" placeholder="New Product...">
+      <button onclick="addNewProduct(productList)">Add</button>
+
+  </div>
+  <br>
+  <div id="table"></div>
+  <br>
+
+</div>
+
+<script>
+    let productList = ['Conan', 'Naruto', 'Attack on Titan', 'Charlotte', 'Doraemon', 'xxxHolic', 'Sakura'];
+
+    function showProduct(list) {
+        let e = "<table>";
+        for (let i = 1; i <= list.length; i++) {
+            e += "<tr>";
+            e += "<td>" + i + "</td>";
+            e += `<td><input type='text' id='${i-1}' value="${list[i-1]}" disabled></td>`;
+            e += `<td><button onclick="editProduct(${i - 1})" id='edit${i-1}'>Sửa</button></td>`;
+            e += `<td><button onclick="deleteProduct(${i - 1})">Xóa</button></td>`;
+            e += "</tr>";
+        }
+        e += "</table>";
+        document.getElementById("table").innerHTML = e;
+    }
+
+    function addNewProduct(list) {
+        let newProduct = document.getElementById('new').value;
+        list.push(newProduct);
+        showProduct(list);
+    }
+
+    function deleteProduct(index) {
+        productList.splice(index,1);
+        showProduct(productList);
+    }
+
+    function editProduct(index) {
+        if (document.getElementById(index).disabled) {
+            document.getElementById(`edit${index}`).innerHTML="Xong";
+            document.getElementById(index).disabled = false;
+        } else {
+            document.getElementById(index).disabled = true;
+            productList[index]= document.getElementById(index).value;
+            showProduct(productList);
+        }
+    }
+</script>
+</body>
+</html>
